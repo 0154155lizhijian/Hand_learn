@@ -18,5 +18,11 @@ export default {
             type:types.SWITCH_TYPE,
             status:status
         }
+    },
+    change(text){
+        return{
+            type:types.CHANGE_ACTIONTEXT,
+            text:text
+        }
     }
 }

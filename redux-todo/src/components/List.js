@@ -10,6 +10,11 @@ export class List extends Component {
     }
     constructor(props){
         super(props)
+        this.state={
+            inputValue:''
+        }
+        this.handleChange=this.handleChange.bind(this)
+        this.handleBtn = this.handleBtn.bind(this)
     }
     componentWillMount(){
         
@@ -18,11 +23,41 @@ export class List extends Component {
     componentWillUnmount(){
         this.unsubscribe()   //订阅结束
     }
+    handleAdd = (e)=>{
+        let code = e.keyCode
+        if(code == 13){
+            this.props.addToDo(this.todo.value)
+            this.todo.value = ''
+        }
+    }
+ 
+    handleChange(e){
+        this.setState({
+            inputValue:e.target.value
+        })
+        console.log(this.state)
+    }
+    handleBtn(){
+        this.props.addToDo(this.state.inputValue)
+        this.setState({
+            inputValue:''
+        })
+    }
     render() {
         return (
             <div>
-                <label>要做的事情<input value={this.props.lists[0].text }/></label>
-                <button >提交</button>
+                <label>要做的事情<input onChange={this.handleChange} value={this.state.inputValue} onKeyDown={this.handleAdd}/></label>
+                <button onClick={this.handleBtn}>提交</button>
+                <ul>
+                    {
+                        this.props.lists.map((list,index)=>(
+                            <li key={index} style={{textDecoration:list.completed?'line-through':''}}>
+                                <span onDoubleClick={()=>this.props.toggle_todo(index)}>{list.text}</span>
+                                <button onClick={()=>this.props.delToDo(index)}>删除</button>
+                            </li>
+                        ))
+                    }
+                </ul>
             </div>
         )
     }
