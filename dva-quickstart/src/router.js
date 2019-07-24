@@ -1,13 +1,14 @@
 import React from 'react';
 import { Router, Route, Switch } from 'dva/router';
-import IndexPage from './routes/IndexPage';
+// import IndexPage from './routes/IndexPage';
 import Product from './routes/Product'
+import Shop from './routes/Shop'
 
 function RouterConfig({ history }) {
   return (
     <Router history={history}>
       <Switch>
-      <Route path="/" exact component={IndexPage} />
+      <Route path="/" exact component={Shop} />
         <Route path="/products" component={Product} />
       </Switch>
     </Router>

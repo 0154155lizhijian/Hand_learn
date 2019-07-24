@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+function Foo(y){
+    this.y = y;
+}
+Foo.prototype.x = 10;
+Foo.prototype.calculate = function(){
+    console.log("calculate")
+}
+let b = new Foo(20);
+let c = new Foo(30);
+</script>
+</html>

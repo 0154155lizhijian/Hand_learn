@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+
+var Site={
+	name :"CodePlayer",
+	url : "https://codeplayer.vip/",
+
+	sayHello : function(){
+		document.writeln("欢迎来到" + this.name);
+	},
+}
+
+var s =  Object.create(Site);
+console.log(s)
+console.log(Site.__proto__.isPrototypeOf(s)) //true
+// console.log(Site.isPrototypeOf(s)) //false
+
+
+</script>
+</html>

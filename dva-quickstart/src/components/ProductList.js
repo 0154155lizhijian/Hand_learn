@@ -6,7 +6,8 @@ const ProductList = ({ onDelete, products }) => {
   const columns = [{
     title: 'Name',
     dataIndex: 'name',
-  }, {
+  }, 
+  {
     title: 'Actions',
     render: (text, record) => {
       return (

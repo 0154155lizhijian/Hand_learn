@@ -4,6 +4,7 @@ import { Provider } from 'react-redux'
 import Counter from './components/Counter'
 import List from './components/List'
 import store from './store';
+import App from './App'
 
 ReactDOM.render((
     <Provider store={store}>
@@ -13,3 +14,7 @@ ReactDOM.render((
         </div>
     </Provider>
 ), document.getElementById('root'));
+
+// ReactDOM.render((
+//     <App></App>
+// ), document.getElementById('root'));
